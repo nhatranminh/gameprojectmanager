@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nha Minh Tran — Project Manager</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a18;
+    --ink-mid: #3d3c38;
+    --ink-soft: #7a7870;
+    --ink-ghost: #b5b3ab;
+    --cream: #f9f6f0;
+    --warm-white: #fdfbf8;
+    --accent: #c84b2f;
+    --accent-light: #f5e8e4;
+    --teal: #1d7a6e;
+    --teal-light: #e0f2ef;
+    --gold: #a07c2a;
+    --gold-light: #f6f0e0;
+    --game: #2d4a7a;
+    --game-light: #e8eef8;
+    --border: rgba(26,26,24,0.10);
+    --border-strong: rgba(26,26,24,0.18);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color: var(--ink); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 5vw; height: 60px; background: rgba(253,251,248,0.88); backdrop-filter: blur(12px); border-bottom: 0.5px solid var(--border); }
+  .nav-logo { font-family: 'DM Serif Display', serif; font-size: 17px; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a { font-size: 13px; color: var(--ink-soft); text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding: 0 5vw; padding-top: 60px; }
+  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 80px 60px 80px 0; }
+  .hero-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--accent); }
+  .hero-name { font-family: 'DM Serif Display', serif; font-size: clamp(48px, 5.5vw, 80px); line-height: 1.02; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 10px; }
+  .hero-name em { font-style: italic; color: var(--accent); }
+  .hero-title { font-size: clamp(15px, 1.4vw, 18px); color: var(--ink-mid); font-weight: 300; margin-bottom: 32px; line-height: 1.5; max-width: 440px; }
+  .hero-stats { display: flex; gap: 32px; margin-bottom: 48px; padding-top: 32px; border-top: 0.5px solid var(--border); flex-wrap: wrap; }
+  .stat-num { font-family: 'DM Serif Display', serif; font-size: 34px; color: var(--ink); line-height: 1; }
+  .stat-label { font-size: 11px; color: var(--ink-soft); margin-top: 4px; letter-spacing: 0.02em; }
+  .hero-cta { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--ink); color: var(--warm-white); padding: 13px 28px; border-radius: 100px; font-size: 13px; font-weight: 500; text-decoration: none; letter-spacing: 0.02em; transition: background 0.2s, transform 0.15s; }
+  .btn-primary:hover { background: var(--accent); transform: translateY(-1px); }
+  .btn-outline { display: inline-flex; align-items: center; gap: 8px; border: 0.5px solid var(--border-strong); color: var(--ink-mid); padding: 13px 24px; border-radius: 100px; font-size: 13px; text-decoration: none; letter-spacing: 0.02em; transition: border-color 0.2s, color 0.2s; }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+  .hero-right { position: relative; display: flex; align-items: center; justify-content: center; padding: 80px 0 80px 60px; }
+  .hero-graphic { width: 100%; max-width: 420px; aspect-ratio: 0.88; background: var(--cream); border-radius: 24px; position: relative; overflow: hidden; border: 0.5px solid var(--border); }
+  .hero-graphic::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 40% at 70% 30%, rgba(200,75,47,0.08) 0%, transparent 60%), radial-gradient(ellipse 50% 60% at 20% 80%, rgba(45,74,122,0.07) 0%, transparent 60%); }
+  .hero-float-card { position: absolute; background: var(--warm-white); border: 0.5px solid var(--border); border-radius: 14px; padding: 14px 18px; font-size: 12px; }
+  .hero-float-card.top-left { top: 32px; left: 28px; }
+  .hero-float-card.bottom-right { bottom: 40px; right: 24px; }
+  .float-label { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-ghost); margin-bottom: 6px; }
+  .float-value { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--ink); line-height: 1.1; }
+  .float-sub { font-size: 11px; color: var(--ink-soft); margin-top: 3px; }
+  .hero-badge { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 116px; height: 116px; border-radius: 50%; background: var(--game); display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--warm-white); }
+  .badge-num { font-family: 'DM Serif Display', serif; font-size: 26px; line-height: 1; }
+  .badge-text { font-size: 8.5px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.65; margin-top: 5px; text-align: center; line-height: 1.5; }
+
+  /* SECTIONS */
+  section { padding: 96px 5vw; }
+  .section-label { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-ghost); margin-bottom: 16px; }
+  .section-title { font-family: 'DM Serif Display', serif; font-size: clamp(30px, 3vw, 44px); line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 12px; }
+  .section-sub { font-size: 15px; color: var(--ink-soft); max-width: 520px; line-height: 1.7; }
+
+  /* ABOUT */
+  .about { background: var(--cream); border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: start; margin-top: 56px; }
+  .about-body { font-size: 16px; color: var(--ink-mid); line-height: 1.8; }
+  .about-body p + p { margin-top: 20px; }
+  .about-body strong { color: var(--ink); font-weight: 500; }
+  .about-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
+  .tag { font-size: 12px; padding: 6px 14px; border-radius: 100px; border: 0.5px solid var(--border-strong); color: var(--ink-mid); letter-spacing: 0.02em; }
+  .tag.accent { background: var(--accent-light); border-color: rgba(200,75,47,0.2); color: var(--accent); }
+  .tag.teal { background: var(--teal-light); border-color: rgba(29,122,110,0.2); color: var(--teal); }
+  .tag.game { background: var(--game-light); border-color: rgba(45,74,122,0.2); color: var(--game); }
+
+  /* EXPERIENCE */
+  .exp-list { margin-top: 64px; }
+  .exp-item { display: grid; grid-template-columns: 180px 1fr; gap: 40px; padding: 44px 0; border-top: 0.5px solid var(--border); }
+  .exp-item:last-child { border-bottom: 0.5px solid var(--border); }
+  .exp-period { font-size: 12px; color: var(--ink-ghost); letter-spacing: 0.05em; margin-bottom: 8px; }
+  .exp-company { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
+  .exp-domain { font-size: 11px; color: var(--ink-ghost); letter-spacing: 0.04em; }
+  .exp-role { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--ink); margin-bottom: 14px; line-height: 1.2; }
+  .exp-desc { font-size: 14px; color: var(--ink-mid); line-height: 1.75; margin-bottom: 20px; }
+  .exp-achievements { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .exp-achievements li { font-size: 13px; color: var(--ink-mid); padding-left: 20px; position: relative; line-height: 1.6; }
+  .exp-achievements li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 12px; top: 1px; }
+  .highlight { color: var(--accent); font-weight: 500; }
+  .game-link { color: var(--game); text-decoration: none; border-bottom: 0.5px solid rgba(45,74,122,0.3); transition: border-color 0.2s; }
+  .game-link:hover { border-color: var(--game); }
+
+  /* GAME TITLES showcase */
+  .games-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
+  .game-card { border: 0.5px solid var(--border); border-radius: 16px; padding: 28px 24px; background: var(--warm-white); transition: border-color 0.2s, transform 0.15s; text-decoration: none; display: block; }
+  .game-card:hover { border-color: var(--game); transform: translateY(-2px); }
+  .game-genre { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-ghost); margin-bottom: 10px; }
+  .game-title { font-family: 'DM Serif Display', serif; font-size: 19px; color: var(--ink); margin-bottom: 8px; line-height: 1.2; }
+  .game-role-badge { display: inline-block; font-size: 11px; padding: 4px 12px; border-radius: 100px; background: var(--game-light); color: var(--game); margin-bottom: 12px; }
+  .game-meta { font-size: 12px; color: var(--ink-soft); line-height: 1.6; }
+  .game-platform { display: flex; gap: 6px; margin-top: 12px; flex-wrap: wrap; }
+  .platform-tag { font-size: 10px; padding: 3px 8px; border-radius: 4px; background: var(--cream); color: var(--ink-soft); border: 0.5px solid var(--border); }
+
+  /* SKILLS */
+  .skills { background: var(--cream); border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); }
+  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 56px; }
+  .skill-card { background: var(--warm-white); padding: 36px 32px; border: 0.5px solid var(--border); transition: background 0.2s; }
+  .skill-card:first-child { border-radius: 14px 0 0 14px; }
+  .skill-card:last-child { border-radius: 0 14px 14px 0; }
+  .skill-card:hover { background: var(--cream); }
+  .skill-icon { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-ghost); margin-bottom: 20px; }
+  .skill-card h3 { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--ink); margin-bottom: 12px; }
+  .skill-items { display: flex; flex-direction: column; gap: 7px; }
+  .skill-item { font-size: 13px; color: var(--ink-mid); display: flex; align-items: center; gap: 8px; }
+  .skill-item::before { content: ''; display: block; width: 3px; height: 3px; border-radius: 50%; background: var(--ink-ghost); flex-shrink: 0; }
+
+  /* CERTS */
+  .certs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin-top: 56px; }
+  .cert-card { padding: 28px 24px; border: 0.5px solid var(--border); border-radius: 12px; background: var(--warm-white); transition: border-color 0.2s, transform 0.15s; }
+  .cert-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .cert-card a { text-decoration: none; color: inherit; display: block; }
+  .cert-card a:hover .cert-name { color: var(--teal); }
+  .cert-org { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-ghost); margin-bottom: 10px; }
+  .cert-name { font-size: 15px; font-weight: 500; color: var(--ink); margin-bottom: 6px; line-height: 1.35; transition: color 0.2s; }
+  .cert-date { font-size: 12px; color: var(--ink-soft); }
+  .cert-badge { display: inline-block; font-size: 10px; padding: 3px 10px; border-radius: 100px; margin-bottom: 12px; letter-spacing: 0.04em; }
+  .cert-badge.pm { background: var(--accent-light); color: var(--accent); }
+  .cert-badge.ba { background: var(--teal-light); color: var(--teal); }
+  .cert-badge.yt { background: #fff0e8; color: #c05020; }
+  .cert-badge.lang { background: var(--gold-light); color: var(--gold); }
+  .cert-link-hint { font-size: 10px; color: var(--teal); margin-top: 8px; letter-spacing: 0.04em; }
+
+  /* CONTACT */
+  .contact { background: var(--ink); color: var(--warm-white); text-align: center; padding: 96px 5vw; }
+  .contact .section-label { color: rgba(255,255,255,0.3); }
+  .contact .section-title { color: var(--warm-white); }
+  .contact .section-sub { color: rgba(255,255,255,0.5); margin: 0 auto 48px; }
+  .contact-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .contact-link { display: inline-flex; align-items: center; gap: 8px; border: 0.5px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.75); padding: 13px 24px; border-radius: 100px; font-size: 13px; text-decoration: none; letter-spacing: 0.02em; transition: border-color 0.2s, color 0.2s; }
+  .contact-link:hover { border-color: rgba(255,255,255,0.6); color: var(--warm-white); }
+  .contact-link.primary { background: var(--accent); border-color: var(--accent); color: var(--warm-white); }
+  .contact-link.primary:hover { background: #b03a20; border-color: #b03a20; }
+
+  footer { background: var(--ink); border-top: 0.5px solid rgba(255,255,255,0.08); padding: 24px 5vw; display: flex; align-items: center; justify-content: space-between; }
+  footer p { font-size: 12px; color: rgba(255,255,255,0.25); }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .animate { opacity: 0; animation: fadeUp 0.6s ease forwards; }
+  .animate-d1 { animation-delay: 0.1s; }
+  .animate-d2 { animation-delay: 0.22s; }
+  .animate-d3 { animation-delay: 0.36s; }
+  .animate-d4 { animation-delay: 0.5s; }
+  .animate-d5 { animation-delay: 0.64s; }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 80px; }
+    .hero-left { padding: 60px 0 40px; }
+    .hero-right { display: none; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .skill-card:first-child, .skill-card:last-child { border-radius: 12px; }
+    .exp-item { grid-template-columns: 1fr; gap: 12px; }
+    .exp-meta { display: flex; gap: 16px; align-items: baseline; flex-wrap: wrap; }
+    .games-grid { grid-template-columns: 1fr; }
+    nav .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">NMT</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#games">Games</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#credentials">Credentials</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-left">
+    <div class="hero-eyebrow animate animate-d1">Project Manager · Game Publishing & Content Ops</div>
+    <h1 class="hero-name animate animate-d2">Nha<br><em>Minh</em> Tran</h1>
+    <p class="hero-title animate animate-d3">
+      From media localization to game publishing — building systems that ship products on time, across languages, at scale.
+    </p>
+    <div class="hero-stats animate animate-d4">
+      <div>
+        <div class="stat-num">3</div>
+        <div class="stat-label">Games Launched @ VNG</div>
+      </div>
+      <div>
+        <div class="stat-num">19M+</div>
+        <div class="stat-label">Subscriber Network @ BP</div>
+      </div>
+      <div>
+        <div class="stat-num">40%</div>
+        <div class="stat-label">Cost Reduction @ BP</div>
+      </div>
+      <div>
+        <div class="stat-num">100%</div>
+        <div class="stat-label">On-Time Delivery</div>
+      </div>
+    </div>
+    <div class="hero-cta animate animate-d5">
+      <a href="#contact" class="btn-primary">Get in touch ↗</a>
+      <a href="#games" class="btn-outline">View games</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-graphic">
+      <div class="hero-float-card top-left">
+        <div class="float-label">Current Role</div>
+        <div class="float-value">VNGGames</div>
+        <div class="float-sub">PM Executive · Dec 2024–Present</div>
+      </div>
+      <div class="hero-badge">
+        <div class="badge-num">IIBA</div>
+        <div class="badge-text">Certified<br>Business Analyst</div>
+      </div>
+      <div class="hero-float-card bottom-right">
+        <div class="float-label">Also building</div>
+        <div class="float-value" style="font-size:15px;margin-top:2px">AI Pipeline</div>
+        <div class="float-sub">Make.com · Claude API · YouTube</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-label">01 — About</div>
+  <h2 class="section-title">Built for complexity,<br>driven by outcomes.</h2>
+  <div class="about-grid">
+    <div>
+      <p class="section-sub">I connect people, pipelines, and platforms — turning ambiguous scope into shipped products, on time, across markets.</p>
+    </div>
+    <div>
+      <div class="about-body">
+        <p>
+          With a <strong>Bachelor's in Business Administration</strong> from Ton Duc Thang University and an <strong>IIBA-certified Business Analyst</strong> credential, I've spent 5+ years managing end-to-end production projects spanning game publishing, media localization, and content operations.
+        </p>
+        <p>
+          At <strong>VNGGames</strong>, I serve as Project Management Executive — leading publishing and localization for three concurrent mobile titles including a Strategic RPG, an AAA Open World MMORPG, and an Otome Game. I'm the sole localization lead across all three, coordinating Vietnamese, English, and Thai content with a 5–10 person cross-functional team per project.
+        </p>
+        <p>
+          Previously at <strong>Bored Panda</strong>, I directly managed the localization team across <strong>8 language channels</strong> — part of a 19M+ subscriber YouTube network (Crafty Panda, Kaboom) partnered with Studio71 for global distribution. I achieved <strong>100% on-time delivery</strong> and <strong>40% production cost reduction</strong> while overseeing French, Korean, Indonesian, Arabic, Portuguese, Spanish and more — simultaneously. Outside of full-time roles, I build AI-driven content pipelines using Make.com, Claude API, and ElevenLabs.
+        </p>
+      </div>
+      <div class="about-tags">
+        <span class="tag game">Game Publishing</span>
+        <span class="tag game">Localization Lead</span>
+        <span class="tag accent">Project Management</span>
+        <span class="tag accent">Media Production</span>
+        <span class="tag teal">Business Analysis</span>
+        <span class="tag teal">IIBA Certified</span>
+        <span class="tag">Agile / Kanban</span>
+        <span class="tag">AI Automation</span>
+        <span class="tag">Vendor Management</span>
+        <span class="tag">9+ Languages</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GAMES -->
+<section id="games">
+  <div class="section-label">02 — Game Projects</div>
+  <h2 class="section-title">Titles I've shipped<br>at VNGGames.</h2>
+  <p class="section-sub">Serving as PM and Localization Lead across three concurrent mobile titles — genre, role, and platform diversity.</p>
+
+  <div class="games-grid">
+    <a href="https://dream.vnggames.com/en/official" target="_blank" class="game-card">
+      <div class="game-genre">Strategic RPG</div>
+      <div class="game-title">Dream and Lethe Record</div>
+      <div class="game-role-badge">Project Manager</div>
+      <p class="game-meta">Full publishing lifecycle — from pre-launch planning and go-to-market execution through live operations and post-launch event management.</p>
+      <div class="game-platform">
+        <span class="platform-tag">iOS</span>
+        <span class="platform-tag">Android</span>
+        <span class="platform-tag">Live</span>
+      </div>
+    </a>
+    <a href="https://nghichthuyhan.vnggames.com/" target="_blank" class="game-card">
+      <div class="game-genre">AAA Open World MMORPG</div>
+      <div class="game-title">Nghich Thuy Han (Sword of Justice)</div>
+      <div class="game-role-badge">Localization Project Manager</div>
+      <p class="game-meta">Leading Vietnamese game content localization as sole localization lead — coordinating across developer, vendor, and publishing stakeholders for an AAA-scale release.</p>
+      <div class="game-platform">
+        <span class="platform-tag">iOS</span>
+        <span class="platform-tag">Android</span>
+        <span class="platform-tag">PC</span>
+      </div>
+    </a>
+    <div class="game-card" style="cursor:default;">
+      <div class="game-genre">Otome / Romance Game</div>
+      <div class="game-title">Otome Game Title</div>
+      <div class="game-role-badge">PM · Localization Lead</div>
+      <p class="game-meta">Serving dual role as Project Manager and Localization Lead — managing vendor relationships, translation workflows, and cross-functional delivery coordination.</p>
+      <div class="game-platform">
+        <span class="platform-tag">iOS</span>
+        <span class="platform-tag">Android</span>
+        <span class="platform-tag">In Pipeline</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" style="background:var(--cream); border-top:0.5px solid var(--border); border-bottom:0.5px solid var(--border);">
+  <div class="section-label">03 — Experience</div>
+  <h2 class="section-title">Where I've built things<br>that lasted.</h2>
+  <div class="exp-list">
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-period">Dec 2024 – Present</div>
+        <div class="exp-company">VNGGames</div>
+        <div class="exp-domain">Game Publishing · Mobile · Cross-platform</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-role">Project Management Executive</div>
+        <p class="exp-desc">Leading publishing PM across three concurrent mobile titles — coordinating cross-functional teams, structurizing localization processes, and optimizing workflows from pre-launch through live operations.</p>
+        <ul class="exp-achievements">
+          <li>Launched <a href="https://dream.vnggames.com/en/official" target="_blank" class="game-link">Dream and Lethe Record</a> (Strategic RPG, iOS/Android) – overseeing publishing lifecycle from planning through live ops and pre-launch events management</li>
+          <li>Leading localization project management for <a href="https://nghichthuyhan.vnggames.com/" target="_blank" class="game-link">Nghịch Thủy Hàn</a> (AAA Open World MMORPG, iOS/Android/PC) — coordinating localization workflows and structurizing processes between developers, vendors, and internal teams</li>
+          <li>Serving as PM and Localization Lead for an Otome Game title — optimizing vendor workflows, translation pipelines, and cross-functional delivery coordination</li>
+          <li>Coordinating and optimizing localization pipelines across <span class="highlight">Vietnamese, English, and Thai</span> language versions simultaneously across all active titles</li>
+          <li>Managing partner and vendor relationships; structurizing repeatable processes for game content, marketing assets, and platform compliance</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-period">Jul 2022 – Jul 2024</div>
+        <div class="exp-company">Bored Panda</div>
+        <div class="exp-domain">Media · Localization · Multi-language Distribution</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-role">Project Manager — Multi-language Distribution</div>
+        <p class="exp-desc">Owned end-to-end production operations across Bored Panda's international YouTube network — part of a <strong>19M+ subscriber</strong> content group partnered with Studio71 for global distribution on YouTube, Roku, Amazon Fire, and Vizio. Directly managed the localization team across 8 language channels simultaneously.</p>
+        <ul class="exp-achievements">
+          <li>Achieved <span class="highlight">100% on-time delivery rate</span> across all productions — including urgent-turnaround content — across 8 language markets simultaneously</li>
+          <li>Reduced production costs by <span class="highlight">40% YoY</span> through workflow automation and PM tool optimization</li>
+          <li>Directly managed localization team for channels including
+            <a href="https://www.youtube.com/@KaboomEnergyFrench/videos" target="_blank" class="game-link">French</a>,
+            <a href="https://www.youtube.com/@KaboomEnergyKorea" target="_blank" class="game-link">Korean</a>,
+            <a href="https://www.youtube.com/@KaboomEnergyBahasaIndonesia" target="_blank" class="game-link">Indonesian</a>,
+            <a href="https://www.youtube.com/@KaboomEnergyArabic" target="_blank" class="game-link">Arabic</a>,
+            <a href="https://www.youtube.com/@KaboomEnergyPortuguese" target="_blank" class="game-link">Portuguese</a>,
+            <a href="https://www.youtube.com/@KaboomEnergySpanish" target="_blank" class="game-link">Spanish</a>,
+            <a href="https://www.youtube.com/@KaboomGo" target="_blank" class="game-link">KaboomGo</a>, and
+            <a href="https://www.youtube.com/@SecretDiariesArabic" target="_blank" class="game-link">Secret Diaries Arabic</a>
+            — overseeing translation, QA, and distribution workflows end-to-end across 2 content verticals</li>
+          <li>Managed content productions, communications and content compliance across YouTube platform</li>
+          <li>Experienced Kanban methodology to department workflows, improving iterative delivery and feedback integration across the full production cycle</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-period">Mar 2021 – Sep 2023</div>
+        <div class="exp-company">Transcosmos Vietnam</div>
+        <div class="exp-domain">Workforce Mgmt · CRM · Tourism</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-role">Data Analyst & Ticketing Specialist</div>
+        <p class="exp-desc">Dual-role supporting Traveloka operations — data visualization and air transport ticketing management.</p>
+        <ul class="exp-achievements">
+          <li>Built dashboards and visual reports surfacing operational patterns for management decision-making</li>
+          <li>Managed air transport ticketing operations with focus on accuracy and customer satisfaction</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-period">Jun 2020 – Jan 2021</div>
+        <div class="exp-company">RICE Content & Media</div>
+        <div class="exp-domain">Film Production</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-role">Assistant Producer</div>
+        <p class="exp-desc">Supported full production pipeline operations — logistics, talent coordination, and financial tracking for video and comedy content.</p>
+        <ul class="exp-achievements">
+          <li>Managed talent, wardrobe, makeup coordination, and production cost tracking on shoot days</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+  <div class="section-label">04 — Skills</div>
+  <h2 class="section-title">What I bring to the table.</h2>
+  <p class="section-sub">Game publishing expertise layered on top of hard PM methodology, localization operations experience, and practical AI tooling.</p>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-icon">Project Management</div>
+      <h3>Execution</h3>
+      <div class="skill-items">
+        <div class="skill-item">End-to-end project lifecycle</div>
+        <div class="skill-item">Agile & Kanban frameworks</div>
+        <div class="skill-item">Risk mitigation & contingency</div>
+        <div class="skill-item">Stakeholder communication</div>
+        <div class="skill-item">Vendor & partner management</div>
+        <div class="skill-item">Cross-functional team leadership</div>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">Game & Tools</div>
+      <h3>Toolstack</h3>
+      <div class="skill-items">
+        <div class="skill-item">Mobile publishing (iOS / Android / PC)</div>
+        <div class="skill-item">Monday.com · Lark · Jira · Confluence</div>
+        <div class="skill-item">Game localization (VI / EN / TH)</div>
+        <div class="skill-item">Make.com automation</div>
+        <div class="skill-item">Claude API · ChatGPT</div>
+        <div class="skill-item">Xmind · Balsamiq · Visily</div>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">Domain Expertise</div>
+      <h3>Domains</h3>
+      <div class="skill-items">
+        <div class="skill-item">Game publishing & go-to-market</div>
+        <div class="skill-item">Localization — 9+ languages</div>
+        <div class="skill-item">Media & video production ops</div>
+        <div class="skill-item">Business analysis (IIBA certified)</div>
+        <div class="skill-item">AI-driven content pipelines</div>
+        <div class="skill-item">YouTube platform operations</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section id="credentials">
+  <div class="section-label">05 — Credentials</div>
+  <h2 class="section-title">Qualifications & certifications.</h2>
+
+  <div class="certs-grid">
+    <div class="cert-card">
+      <a href="https://www.coursera.org/account/accomplishments/specialization/QLXTUVCONMEK" target="_blank">
+        <div class="cert-badge pm">Coursera</div>
+        <div class="cert-name">Project Management Professional</div>
+        <div class="cert-org">Google / Coursera</div>
+        <div class="cert-date">December 2025</div>
+        <div class="cert-link-hint">↗ View certificate</div>
+      </a>
+    </div>
+    <div class="cert-card">
+      <a href="hhttps://www.coursera.org/account/accomplishments/verify/73AU5DOK83T1" target="_blank">
+        <div class="cert-badge pm">Coursera</div>
+        <div class="cert-name">Agile Project Management</div>
+        <div class="cert-org">Google / Coursera</div>
+        <div class="cert-date">December 2025</div>
+        <div class="cert-link-hint">↗ View certificate</div>
+      </a>
+    </div>
+    <div class="cert-card">
+      <div class="cert-badge ba">IIBA</div>
+      <div class="cert-name">Business Analyst Certification</div>
+      <div class="cert-org">IIBA Endorsed Provider (BAC)</div>
+      <div class="cert-date">March 2024</div>
+    </div>
+    <div class="cert-card">
+       <a href="https://www.coursera.org/account/accomplishments/verify/JRESHFMHYQC2" target="_blank">
+        <div class="cert-badge pm">Coursera</div>
+        <div class="cert-name">Business Analysis & Process Management</div>
+        <div class="cert-org">Google / Coursera</div>
+        <div class="cert-date">December 2025</div>
+        <div class="cert-link-hint">↗ View certificate</div>
+      </a>
+    </div>
+    <div class="cert-card">
+      <a href="https://cert.efset.org/U8z88u" target="_blank">
+        <div class="cert-badge lang">CEFR</div>
+        <div class="cert-name">C1 Advanced English</div>
+        <div class="cert-org">EF SET — Common European Framework</div>
+        <div class="cert-date">April 2024</div>
+        <div class="cert-link-hint">↗ View certificate</div>
+      </a>
+    </div>
+    <div class="cert-card">
+      <div class="cert-badge yt">YouTube</div>
+      <div class="cert-name">Asset Monetization</div>
+      <div class="cert-org">YouTube Creator Academy</div>
+      <div class="cert-date">October 2024 · ID: 84358603</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-badge yt">YouTube</div>
+      <div class="cert-name">Content Ownership Certification</div>
+      <div class="cert-org">YouTube Creator Academy</div>
+      <div class="cert-date">October 2024 · ID: 94273616</div>
+    </div>
+    <div class="cert-card" style="background:var(--cream);border-style:dashed;">
+      <div class="cert-badge pm">Education</div>
+      <div class="cert-name">BBA — Business Administration</div>
+      <div class="cert-org">Ton Duc Thang University</div>
+      <div class="cert-date">Graduated 2021</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-label">06 — Contact</div>
+  <h2 class="section-title" style="margin-bottom:16px">Let's build<br>something together.</h2>
+  <p class="section-sub">Open to PM roles in game publishing, development studios, and media/content operations. Also available for localization consulting and AI workflow projects.</p>
+  <div class="contact-links">
+    <a href="mailto:nha.tranminh19@gmail.com" class="contact-link primary">nha.tranminh19@gmail.com ↗</a>
+    <a href="https://www.linkedin.com/in/nhaminhtran/" target="_blank" class="contact-link">LinkedIn</a>
+    <a href="tel:+840798283283" class="contact-link">+84 079 828 3283</div></a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Nha Minh Tran</p>
+  <p>Ho Chi Minh City, Vietnam</p>
+</footer>
+
+</body>
+</html>
