@@ -4,3 +4,5 @@
 
 [build.environment]
   NODE_VERSION = "20"
+
+# Static site — no build step required
