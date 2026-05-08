@@ -11,6 +11,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nha Minh Tran — Project Manager">
 <meta name="twitter:description" content="Game publishing PM at VNGGames. Launched 3 mobile titles, led localization across 9+ languages, 100% on-time delivery.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231a1a18'/><text x='16' y='23' font-family='Georgia,serif' font-size='13' font-weight='bold' fill='%23fdfbf8' text-anchor='middle'>NMT</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
@@ -107,6 +108,7 @@
   .highlight { color: var(--accent); font-weight: 500; }
   .game-link { color: var(--game); text-decoration: none; border-bottom: 0.5px solid rgba(45,74,122,0.3); transition: border-color 0.2s; }
   .game-link:hover { border-color: var(--game); }
+  .exp-section { background: var(--cream); border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); }
 
   /* GAME TITLES showcase */
   .games-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
@@ -227,7 +229,7 @@
     <div class="hero-stats animate animate-d4">
       <div>
         <div class="stat-num">3</div>
-        <div class="stat-label">Games Launched @ VNG</div>
+        <div class="stat-label">Game Titles @ VNG</div>
       </div>
       <div>
         <div class="stat-num">19M+</div>
@@ -312,7 +314,7 @@
   <div class="games-grid">
     <a href="https://dream.vnggames.com/en/official" target="_blank" rel="noopener noreferrer" class="game-card">
       <div class="game-genre">Strategic RPG</div>
-      <div class="game-title">Dream and Lethe Record</div>
+      <h3 class="game-title">Dream and Lethe Record</h3>
       <div class="game-role-badge">Project Manager</div>
       <p class="game-meta">Full publishing lifecycle — from pre-launch planning and go-to-market execution through live operations and post-launch event management.</p>
       <div class="game-platform">
@@ -323,7 +325,7 @@
     </a>
     <a href="https://nghichthuyhan.vnggames.com/" target="_blank" rel="noopener noreferrer" class="game-card">
       <div class="game-genre">AAA Open World MMORPG</div>
-      <div class="game-title">Nghich Thuy Han (Sword of Justice)</div>
+      <h3 class="game-title">Nghich Thuy Han (Sword of Justice)</h3>
       <div class="game-role-badge">Localization Project Manager</div>
       <p class="game-meta">Leading Vietnamese game content localization as sole localization lead — coordinating across developer, vendor, and publishing stakeholders for an AAA-scale release.</p>
       <div class="game-platform">
@@ -334,7 +336,7 @@
     </a>
     <div class="game-card" style="cursor:default;">
       <div class="game-genre">Otome / Romance Game</div>
-      <div class="game-title">Unannounced Otome Title</div>
+      <h3 class="game-title">Unannounced Otome Title</h3>
       <div class="game-role-badge">PM · Localization Lead</div>
       <p class="game-meta">Serving dual role as Project Manager and Localization Lead — managing vendor relationships, translation workflows, and cross-functional delivery coordination.</p>
       <div class="game-platform">
@@ -347,7 +349,7 @@
 </section>
 
 <!-- EXPERIENCE -->
-<section id="experience" style="background:var(--cream); border-top:0.5px solid var(--border); border-bottom:0.5px solid var(--border);">
+<section id="experience" class="exp-section">
   <div class="section-label">03 — Experience</div>
   <h2 class="section-title">Where I've built things<br>that lasted.</h2>
   <div class="exp-list">
@@ -363,7 +365,7 @@
         <p class="exp-desc">Leading publishing PM across three concurrent mobile titles — coordinating cross-functional teams, structuring localization processes, and optimizing workflows from pre-launch through live operations.</p>
         <ul class="exp-achievements">
           <li>Launched <a href="https://dream.vnggames.com/en/official" target="_blank" rel="noopener noreferrer" class="game-link">Dream and Lethe Record</a> (Strategic RPG, iOS/Android) – overseeing publishing lifecycle from planning through live ops and pre-launch events management</li>
-          <li>Leading localization project management for <a href="https://nghichthuyhan.vnggames.com/" target="_blank" rel="noopener noreferrer" class="game-link">Nghịch Thủy Hàn</a> (AAA Open World MMORPG, iOS/Android/PC) — coordinating localization workflows and structuring processes between developers, vendors, and internal teams</li>
+          <li>Leading localization project management for <a href="https://nghichthuyhan.vnggames.com/" target="_blank" rel="noopener noreferrer" class="game-link" lang="vi">Nghịch Thủy Hàn</a> (AAA Open World MMORPG, iOS/Android/PC) — coordinating localization workflows and structuring processes between developers, vendors, and internal teams</li>
           <li>Serving as PM and Localization Lead for an Otome Game title — optimizing vendor workflows, translation pipelines, and cross-functional delivery coordination</li>
           <li>Coordinating and optimizing localization pipelines across <span class="highlight">Vietnamese, English, and Thai</span> language versions simultaneously across all active titles</li>
           <li>Managing partner and vendor relationships; structuring repeatable processes for game content, marketing assets, and platform compliance</li>
@@ -487,7 +489,7 @@
     <div class="cert-card">
       <a href="https://www.coursera.org/account/accomplishments/specialization/QLXTUVCONMEK" target="_blank" rel="noopener noreferrer">
         <div class="cert-badge pm">Coursera</div>
-        <div class="cert-name">Project Management Professional</div>
+        <h3 class="cert-name">Project Management Professional</h3>
         <div class="cert-org">Google / Coursera</div>
         <div class="cert-date">December 2025</div>
         <div class="cert-link-hint">↗ View certificate</div>
@@ -496,7 +498,7 @@
     <div class="cert-card">
       <a href="https://www.coursera.org/account/accomplishments/verify/73AU5DOK83T1" target="_blank" rel="noopener noreferrer">
         <div class="cert-badge pm">Coursera</div>
-        <div class="cert-name">Agile Project Management</div>
+        <h3 class="cert-name">Agile Project Management</h3>
         <div class="cert-org">Google / Coursera</div>
         <div class="cert-date">December 2025</div>
         <div class="cert-link-hint">↗ View certificate</div>
@@ -504,14 +506,14 @@
     </div>
     <div class="cert-card">
       <div class="cert-badge ba">IIBA</div>
-      <div class="cert-name">Business Analyst Certification</div>
+      <h3 class="cert-name">Business Analyst Certification</h3>
       <div class="cert-org">IIBA Endorsed Provider (BAC)</div>
       <div class="cert-date">March 2024</div>
     </div>
     <div class="cert-card">
        <a href="https://www.coursera.org/account/accomplishments/verify/JRESHFMHYQC2" target="_blank" rel="noopener noreferrer">
         <div class="cert-badge pm">Coursera</div>
-        <div class="cert-name">Business Analysis &amp; Process Management</div>
+        <h3 class="cert-name">Business Analysis &amp; Process Management</h3>
         <div class="cert-org">Google / Coursera</div>
         <div class="cert-date">December 2025</div>
         <div class="cert-link-hint">↗ View certificate</div>
@@ -520,7 +522,7 @@
     <div class="cert-card">
       <a href="https://cert.efset.org/U8z88u" target="_blank" rel="noopener noreferrer">
         <div class="cert-badge lang">CEFR</div>
-        <div class="cert-name">C1 Advanced English</div>
+        <h3 class="cert-name">C1 Advanced English</h3>
         <div class="cert-org">EF SET — Common European Framework</div>
         <div class="cert-date">April 2024</div>
         <div class="cert-link-hint">↗ View certificate</div>
@@ -528,19 +530,19 @@
     </div>
     <div class="cert-card">
       <div class="cert-badge yt">YouTube</div>
-      <div class="cert-name">Asset Monetization</div>
+      <h3 class="cert-name">Asset Monetization</h3>
       <div class="cert-org">YouTube Creator Academy</div>
       <div class="cert-date">October 2024 · ID: 84358603</div>
     </div>
     <div class="cert-card">
       <div class="cert-badge yt">YouTube</div>
-      <div class="cert-name">Content Ownership Certification</div>
+      <h3 class="cert-name">Content Ownership Certification</h3>
       <div class="cert-org">YouTube Creator Academy</div>
       <div class="cert-date">October 2024 · ID: 94273616</div>
     </div>
     <div class="cert-card" style="background:var(--cream);border-style:dashed;">
       <div class="cert-badge pm">Education</div>
-      <div class="cert-name">BBA — Business Administration</div>
+      <h3 class="cert-name">BBA — Business Administration</h3>
       <div class="cert-org">Ton Duc Thang University</div>
       <div class="cert-date">Graduated 2021</div>
     </div>
