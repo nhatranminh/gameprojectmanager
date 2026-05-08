@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nha Minh Tran — Project Manager</title>
+<meta name="description" content="Nha Minh Tran — Project Manager specialising in game publishing, localization, and content operations. 5+ years building cross-functional teams that ship on time, across languages, at scale.">
+<meta property="og:title" content="Nha Minh Tran — Project Manager">
+<meta property="og:description" content="Game publishing PM at VNGGames. Launched 3 mobile titles, led localization across 9+ languages, 100% on-time delivery.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Nha Minh Tran — Project Manager">
+<meta name="twitter:description" content="Game publishing PM at VNGGames. Launched 3 mobile titles, led localization across 9+ languages, 100% on-time delivery.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -161,6 +170,9 @@
   .animate-d4 { animation-delay: 0.5s; }
   .animate-d5 { animation-delay: 0.64s; }
 
+  /* HAMBURGER */
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; color: var(--ink); line-height: 1; }
+
   @media (max-width: 900px) {
     .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 80px; }
     .hero-left { padding: 60px 0 40px; }
@@ -171,7 +183,16 @@
     .exp-item { grid-template-columns: 1fr; gap: 12px; }
     .exp-meta { display: flex; gap: 16px; align-items: baseline; flex-wrap: wrap; }
     .games-grid { grid-template-columns: 1fr; }
-    nav .nav-links { display: none; }
+    .nav-toggle { display: flex; align-items: center; }
+    nav .nav-links { display: none; flex-direction: column; position: fixed; top: 60px; left: 0; right: 0; background: rgba(253,251,248,0.97); backdrop-filter: blur(12px); border-bottom: 0.5px solid var(--border); padding: 20px 5vw 28px; gap: 20px; z-index: 99; }
+    nav .nav-links.open { display: flex; }
+    nav .nav-links a { font-size: 16px; color: var(--ink-mid); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate { animation: none; opacity: 1; }
+    html { scroll-behavior: auto; }
+    .btn-primary, .btn-outline, .game-card, .cert-card { transition: none; }
   }
 </style>
 </head>
@@ -179,7 +200,12 @@
 
 <nav>
   <a href="#" class="nav-logo">NMT</a>
-  <ul class="nav-links">
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+      <line x1="2" y1="5" x2="18" y2="5"/><line x1="2" y1="10" x2="18" y2="10"/><line x1="2" y1="15" x2="18" y2="15"/>
+    </svg>
+  </button>
+  <ul class="nav-links" id="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#games">Games</a></li>
     <li><a href="#experience">Experience</a></li>
@@ -189,10 +215,11 @@
   </ul>
 </nav>
 
+<main>
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-left">
-    <div class="hero-eyebrow animate animate-d1">Project Manager · Game Publishing & Content Ops</div>
+    <div class="hero-eyebrow animate animate-d1">Project Manager · Game Publishing &amp; Content Ops</div>
     <h1 class="hero-name animate animate-d2">Nha<br><em>Minh</em> Tran</h1>
     <p class="hero-title animate animate-d3">
       From media localization to game publishing — building systems that ship products on time, across languages, at scale.
@@ -283,7 +310,7 @@
   <p class="section-sub">Serving as PM and Localization Lead across three concurrent mobile titles — genre, role, and platform diversity.</p>
 
   <div class="games-grid">
-    <a href="https://dream.vnggames.com/en/official" target="_blank" class="game-card">
+    <a href="https://dream.vnggames.com/en/official" target="_blank" rel="noopener noreferrer" class="game-card">
       <div class="game-genre">Strategic RPG</div>
       <div class="game-title">Dream and Lethe Record</div>
       <div class="game-role-badge">Project Manager</div>
@@ -294,7 +321,7 @@
         <span class="platform-tag">Live</span>
       </div>
     </a>
-    <a href="https://nghichthuyhan.vnggames.com/" target="_blank" class="game-card">
+    <a href="https://nghichthuyhan.vnggames.com/" target="_blank" rel="noopener noreferrer" class="game-card">
       <div class="game-genre">AAA Open World MMORPG</div>
       <div class="game-title">Nghich Thuy Han (Sword of Justice)</div>
       <div class="game-role-badge">Localization Project Manager</div>
@@ -307,7 +334,7 @@
     </a>
     <div class="game-card" style="cursor:default;">
       <div class="game-genre">Otome / Romance Game</div>
-      <div class="game-title">Otome Game Title</div>
+      <div class="game-title">Unannounced Otome Title</div>
       <div class="game-role-badge">PM · Localization Lead</div>
       <p class="game-meta">Serving dual role as Project Manager and Localization Lead — managing vendor relationships, translation workflows, and cross-functional delivery coordination.</p>
       <div class="game-platform">
@@ -333,13 +360,13 @@
       </div>
       <div class="exp-content">
         <div class="exp-role">Project Management Executive</div>
-        <p class="exp-desc">Leading publishing PM across three concurrent mobile titles — coordinating cross-functional teams, structurizing localization processes, and optimizing workflows from pre-launch through live operations.</p>
+        <p class="exp-desc">Leading publishing PM across three concurrent mobile titles — coordinating cross-functional teams, structuring localization processes, and optimizing workflows from pre-launch through live operations.</p>
         <ul class="exp-achievements">
-          <li>Launched <a href="https://dream.vnggames.com/en/official" target="_blank" class="game-link">Dream and Lethe Record</a> (Strategic RPG, iOS/Android) – overseeing publishing lifecycle from planning through live ops and pre-launch events management</li>
-          <li>Leading localization project management for <a href="https://nghichthuyhan.vnggames.com/" target="_blank" class="game-link">Nghịch Thủy Hàn</a> (AAA Open World MMORPG, iOS/Android/PC) — coordinating localization workflows and structurizing processes between developers, vendors, and internal teams</li>
+          <li>Launched <a href="https://dream.vnggames.com/en/official" target="_blank" rel="noopener noreferrer" class="game-link">Dream and Lethe Record</a> (Strategic RPG, iOS/Android) – overseeing publishing lifecycle from planning through live ops and pre-launch events management</li>
+          <li>Leading localization project management for <a href="https://nghichthuyhan.vnggames.com/" target="_blank" rel="noopener noreferrer" class="game-link">Nghịch Thủy Hàn</a> (AAA Open World MMORPG, iOS/Android/PC) — coordinating localization workflows and structuring processes between developers, vendors, and internal teams</li>
           <li>Serving as PM and Localization Lead for an Otome Game title — optimizing vendor workflows, translation pipelines, and cross-functional delivery coordination</li>
           <li>Coordinating and optimizing localization pipelines across <span class="highlight">Vietnamese, English, and Thai</span> language versions simultaneously across all active titles</li>
-          <li>Managing partner and vendor relationships; structurizing repeatable processes for game content, marketing assets, and platform compliance</li>
+          <li>Managing partner and vendor relationships; structuring repeatable processes for game content, marketing assets, and platform compliance</li>
         </ul>
       </div>
     </div>
@@ -357,17 +384,17 @@
           <li>Achieved <span class="highlight">100% on-time delivery rate</span> across all productions — including urgent-turnaround content — across 8 language markets simultaneously</li>
           <li>Reduced production costs by <span class="highlight">40% YoY</span> through workflow automation and PM tool optimization</li>
           <li>Directly managed localization team for channels including
-            <a href="https://www.youtube.com/@KaboomEnergyFrench/videos" target="_blank" class="game-link">French</a>,
-            <a href="https://www.youtube.com/@KaboomEnergyKorea" target="_blank" class="game-link">Korean</a>,
-            <a href="https://www.youtube.com/@KaboomEnergyBahasaIndonesia" target="_blank" class="game-link">Indonesian</a>,
-            <a href="https://www.youtube.com/@KaboomEnergyArabic" target="_blank" class="game-link">Arabic</a>,
-            <a href="https://www.youtube.com/@KaboomEnergyPortuguese" target="_blank" class="game-link">Portuguese</a>,
-            <a href="https://www.youtube.com/@KaboomEnergySpanish" target="_blank" class="game-link">Spanish</a>,
-            <a href="https://www.youtube.com/@KaboomGo" target="_blank" class="game-link">KaboomGo</a>, and
-            <a href="https://www.youtube.com/@SecretDiariesArabic" target="_blank" class="game-link">Secret Diaries Arabic</a>
+            <a href="https://www.youtube.com/@KaboomEnergyFrench/videos" target="_blank" rel="noopener noreferrer" class="game-link">French</a>,
+            <a href="https://www.youtube.com/@KaboomEnergyKorea" target="_blank" rel="noopener noreferrer" class="game-link">Korean</a>,
+            <a href="https://www.youtube.com/@KaboomEnergyBahasaIndonesia" target="_blank" rel="noopener noreferrer" class="game-link">Indonesian</a>,
+            <a href="https://www.youtube.com/@KaboomEnergyArabic" target="_blank" rel="noopener noreferrer" class="game-link">Arabic</a>,
+            <a href="https://www.youtube.com/@KaboomEnergyPortuguese" target="_blank" rel="noopener noreferrer" class="game-link">Portuguese</a>,
+            <a href="https://www.youtube.com/@KaboomEnergySpanish" target="_blank" rel="noopener noreferrer" class="game-link">Spanish</a>,
+            <a href="https://www.youtube.com/@KaboomGo" target="_blank" rel="noopener noreferrer" class="game-link">KaboomGo</a>, and
+            <a href="https://www.youtube.com/@SecretDiariesArabic" target="_blank" rel="noopener noreferrer" class="game-link">Secret Diaries Arabic</a>
             — overseeing translation, QA, and distribution workflows end-to-end across 2 content verticals</li>
           <li>Managed content productions, communications and content compliance across YouTube platform</li>
-          <li>Experienced Kanban methodology to department workflows, improving iterative delivery and feedback integration across the full production cycle</li>
+          <li>Applied Kanban methodology to department workflows, improving iterative delivery and feedback integration across the full production cycle</li>
         </ul>
       </div>
     </div>
@@ -379,7 +406,7 @@
         <div class="exp-domain">Workforce Mgmt · CRM · Tourism</div>
       </div>
       <div class="exp-content">
-        <div class="exp-role">Data Analyst & Ticketing Specialist</div>
+        <div class="exp-role">Data Analyst &amp; Ticketing Specialist</div>
         <p class="exp-desc">Dual-role supporting Traveloka operations — data visualization and air transport ticketing management.</p>
         <ul class="exp-achievements">
           <li>Built dashboards and visual reports surfacing operational patterns for management decision-making</li>
@@ -391,7 +418,7 @@
     <div class="exp-item">
       <div class="exp-meta">
         <div class="exp-period">Jun 2020 – Jan 2021</div>
-        <div class="exp-company">RICE Content & Media</div>
+        <div class="exp-company">RICE Content &amp; Media</div>
         <div class="exp-domain">Film Production</div>
       </div>
       <div class="exp-content">
@@ -417,15 +444,15 @@
       <h3>Execution</h3>
       <div class="skill-items">
         <div class="skill-item">End-to-end project lifecycle</div>
-        <div class="skill-item">Agile & Kanban frameworks</div>
-        <div class="skill-item">Risk mitigation & contingency</div>
+        <div class="skill-item">Agile &amp; Kanban frameworks</div>
+        <div class="skill-item">Risk mitigation &amp; contingency</div>
         <div class="skill-item">Stakeholder communication</div>
-        <div class="skill-item">Vendor & partner management</div>
+        <div class="skill-item">Vendor &amp; partner management</div>
         <div class="skill-item">Cross-functional team leadership</div>
       </div>
     </div>
     <div class="skill-card">
-      <div class="skill-icon">Game & Tools</div>
+      <div class="skill-icon">Game &amp; Tools</div>
       <h3>Toolstack</h3>
       <div class="skill-items">
         <div class="skill-item">Mobile publishing (iOS / Android / PC)</div>
@@ -440,9 +467,9 @@
       <div class="skill-icon">Domain Expertise</div>
       <h3>Domains</h3>
       <div class="skill-items">
-        <div class="skill-item">Game publishing & go-to-market</div>
+        <div class="skill-item">Game publishing &amp; go-to-market</div>
         <div class="skill-item">Localization — 9+ languages</div>
-        <div class="skill-item">Media & video production ops</div>
+        <div class="skill-item">Media &amp; video production ops</div>
         <div class="skill-item">Business analysis (IIBA certified)</div>
         <div class="skill-item">AI-driven content pipelines</div>
         <div class="skill-item">YouTube platform operations</div>
@@ -454,11 +481,11 @@
 <!-- CREDENTIALS -->
 <section id="credentials">
   <div class="section-label">05 — Credentials</div>
-  <h2 class="section-title">Qualifications & certifications.</h2>
+  <h2 class="section-title">Qualifications &amp; certifications.</h2>
 
   <div class="certs-grid">
     <div class="cert-card">
-      <a href="https://www.coursera.org/account/accomplishments/specialization/QLXTUVCONMEK" target="_blank">
+      <a href="https://www.coursera.org/account/accomplishments/specialization/QLXTUVCONMEK" target="_blank" rel="noopener noreferrer">
         <div class="cert-badge pm">Coursera</div>
         <div class="cert-name">Project Management Professional</div>
         <div class="cert-org">Google / Coursera</div>
@@ -467,7 +494,7 @@
       </a>
     </div>
     <div class="cert-card">
-      <a href="hhttps://www.coursera.org/account/accomplishments/verify/73AU5DOK83T1" target="_blank">
+      <a href="https://www.coursera.org/account/accomplishments/verify/73AU5DOK83T1" target="_blank" rel="noopener noreferrer">
         <div class="cert-badge pm">Coursera</div>
         <div class="cert-name">Agile Project Management</div>
         <div class="cert-org">Google / Coursera</div>
@@ -482,16 +509,16 @@
       <div class="cert-date">March 2024</div>
     </div>
     <div class="cert-card">
-       <a href="https://www.coursera.org/account/accomplishments/verify/JRESHFMHYQC2" target="_blank">
+       <a href="https://www.coursera.org/account/accomplishments/verify/JRESHFMHYQC2" target="_blank" rel="noopener noreferrer">
         <div class="cert-badge pm">Coursera</div>
-        <div class="cert-name">Business Analysis & Process Management</div>
+        <div class="cert-name">Business Analysis &amp; Process Management</div>
         <div class="cert-org">Google / Coursera</div>
         <div class="cert-date">December 2025</div>
         <div class="cert-link-hint">↗ View certificate</div>
       </a>
     </div>
     <div class="cert-card">
-      <a href="https://cert.efset.org/U8z88u" target="_blank">
+      <a href="https://cert.efset.org/U8z88u" target="_blank" rel="noopener noreferrer">
         <div class="cert-badge lang">CEFR</div>
         <div class="cert-name">C1 Advanced English</div>
         <div class="cert-org">EF SET — Common European Framework</div>
@@ -527,15 +554,28 @@
   <p class="section-sub">Open to PM roles in game publishing, development studios, and media/content operations. Also available for localization consulting and AI workflow projects.</p>
   <div class="contact-links">
     <a href="mailto:nha.tranminh19@gmail.com" class="contact-link primary">nha.tranminh19@gmail.com ↗</a>
-    <a href="https://www.linkedin.com/in/nhaminhtran/" target="_blank" class="contact-link">LinkedIn</a>
-    <a href="tel:+840798283283" class="contact-link">+84 079 828 3283</div></a>
+    <a href="https://www.linkedin.com/in/nhaminhtran/" target="_blank" rel="noopener noreferrer" class="contact-link">LinkedIn</a>
+    <a href="tel:+84798283283" class="contact-link">+84 079 828 3283</a>
   </div>
 </section>
+</main>
 
 <footer>
-  <p>© 2025 Nha Minh Tran</p>
+  <p>© 2026 Nha Minh Tran</p>
   <p>Ho Chi Minh City, Vietnam</p>
 </footer>
 
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.getElementById('nav-links');
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    links.classList.remove('open');
+    toggle.setAttribute('aria-expanded', false);
+  }));
+</script>
 </body>
 </html>
