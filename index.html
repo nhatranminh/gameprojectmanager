@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nha Minh Tran — Project Manager</title>
-<meta name="description" content="Nha Minh Tran — Project Manager specialising in game publishing, localization, and content operations. 5+ years building cross-functional teams that ship on time, across languages, at scale.">
-<meta property="og:title" content="Nha Minh Tran — Project Manager">
-<meta property="og:description" content="Game publishing PM at VNGGames. Launched 3 mobile titles, led localization across 9+ languages, 100% on-time delivery.">
+<title>Nha Minh Tran — IT Project Manager · Game Industry</title>
+<meta name="description" content="Nha Minh Tran — IT Project Manager in game publishing and software delivery. 5+ years coordinating cross-functional teams, SDLC pipelines, and technical delivery across mobile, PC, and multi-platform projects.">
+<meta property="og:title" content="Nha Minh Tran — IT Project Manager · Game Industry">
+<meta property="og:description" content="IT PM at VNGGames. Coordinating dev teams, managing software delivery pipelines, and shipping 3 game titles across iOS, Android, and PC.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nha Minh Tran — Project Manager">
-<meta name="twitter:description" content="Game publishing PM at VNGGames. Launched 3 mobile titles, led localization across 9+ languages, 100% on-time delivery.">
+<meta name="twitter:title" content="Nha Minh Tran — IT Project Manager · Game Industry">
+<meta name="twitter:description" content="IT PM at VNGGames. Coordinating dev teams, managing software delivery pipelines, and shipping 3 game titles across iOS, Android, and PC.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231a1a18'/><text x='16' y='23' font-family='Georgia,serif' font-size='13' font-weight='bold' fill='%23fdfbf8' text-anchor='middle'>NMT</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -123,10 +123,19 @@
 
   /* SKILLS */
   .skills { background: var(--cream); border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); }
-  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 56px; }
-  .skill-card { background: var(--warm-white); padding: 36px 32px; border: 0.5px solid var(--border); transition: background 0.2s; }
+  .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 56px; }
+  .skill-card { background: var(--warm-white); padding: 36px 28px; border: 0.5px solid var(--border); transition: background 0.2s; }
   .skill-card:first-child { border-radius: 14px 0 0 14px; }
   .skill-card:last-child { border-radius: 0 14px 14px 0; }
+
+  /* AI PIPELINE */
+  .pipeline-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 56px; }
+  .pipeline-card { border: 0.5px solid var(--border); border-radius: 16px; padding: 36px 32px; background: var(--warm-white); }
+  .pipeline-stack { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; font-weight: 500; }
+  .pipeline-card h3 { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--ink); margin-bottom: 12px; line-height: 1.2; }
+  .pipeline-card p { font-size: 14px; color: var(--ink-mid); line-height: 1.75; margin-bottom: 20px; }
+  .pipeline-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pipeline-tag { font-size: 11px; padding: 4px 12px; border-radius: 100px; background: var(--teal-light); color: var(--teal); border: 0.5px solid rgba(29,122,110,0.2); }
   .skill-card:hover { background: var(--cream); }
   .skill-icon { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-ghost); margin-bottom: 20px; }
   .skill-card h3 { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--ink); margin-bottom: 12px; }
@@ -180,8 +189,9 @@
     .hero-left { padding: 60px 0 40px; }
     .hero-right { display: none; }
     .about-grid { grid-template-columns: 1fr; gap: 40px; }
-    .skills-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr 1fr; }
     .skill-card:first-child, .skill-card:last-child { border-radius: 12px; }
+    .pipeline-grid { grid-template-columns: 1fr; }
     .exp-item { grid-template-columns: 1fr; gap: 12px; }
     .exp-meta { display: flex; gap: 16px; align-items: baseline; flex-wrap: wrap; }
     .games-grid { grid-template-columns: 1fr; }
@@ -211,6 +221,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#games">Games</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#ai-pipeline">AI Pipeline</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#credentials">Credentials</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -221,19 +232,19 @@
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-left">
-    <div class="hero-eyebrow animate animate-d1">Project Manager · Game Publishing & Content Ops</div>
+    <div class="hero-eyebrow animate animate-d1">IT Project Manager · Game Publishing & Software Delivery</div>
     <h1 class="hero-name animate animate-d2">Nha<br><em>Minh</em> Tran</h1>
     <p class="hero-title animate animate-d3">
-      From media localization to game publishing — building systems that ship products on time, across languages, at scale.
+      Bridging development teams and business outcomes — managing software delivery, cross-platform launches, and technical pipelines from planning to go-live.
     </p>
     <div class="hero-stats animate animate-d4">
       <div>
         <div class="stat-num">3</div>
-        <div class="stat-label">Game Titles @ VNG</div>
+        <div class="stat-label">Game Titles Shipped</div>
       </div>
       <div>
-        <div class="stat-num">19M+</div>
-        <div class="stat-label">Subscriber Network @ BP</div>
+        <div class="stat-num">5+</div>
+        <div class="stat-label">Years SDLC & Delivery</div>
       </div>
       <div>
         <div class="stat-num">40%</div>
@@ -275,31 +286,31 @@
   <h2 class="section-title">Built for complexity,<br>driven by outcomes.</h2>
   <div class="about-grid">
     <div>
-      <p class="section-sub">I connect people, pipelines, and platforms — turning ambiguous scope into shipped products, on time, across markets.</p>
+      <p class="section-sub">I connect development teams and business stakeholders — translating technical scope into shipped software, on time, across platforms and markets.</p>
     </div>
     <div>
       <div class="about-body">
         <p>
-          With a <strong>Bachelor's in Business Administration</strong> from Ton Duc Thang University and an <strong>IIBA-certified Business Analyst</strong> credential, I've spent 5+ years managing end-to-end production projects spanning game publishing, media localization, and content operations.
+          With a <strong>Bachelor's in Business Administration</strong> and an <strong>IIBA-certified Business Analyst</strong> credential, I've spent 5+ years managing software delivery across game publishing, media platforms, and data operations — coordinating engineers, QA, vendors, and business stakeholders in fast-moving environments.
         </p>
         <p>
-          At <strong>VNGGames</strong>, I serve as Project Management Executive — leading publishing and localization for three concurrent mobile titles including a Strategic RPG, an AAA Open World MMORPG, and an Otome Game. I'm the sole localization lead across all three, coordinating Vietnamese, English, and Thai content with a 5–10 person cross-functional team per project.
+          At <strong>VNGGames</strong>, I manage the full software delivery lifecycle for three concurrent mobile and PC titles — coordinating with development teams on build schedules, technical dependencies, and platform submission requirements for iOS, Android, and PC. I own cross-functional delivery across 5–10 person teams per project, from sprint planning through go-live and live ops.
         </p>
         <p>
-          Previously at <strong>Bored Panda</strong>, I directly managed the localization team across <strong>8 language channels</strong> — part of a 19M+ subscriber YouTube network (Crafty Panda, Kaboom) partnered with Studio71 for global distribution. I achieved <strong>100% on-time delivery</strong> and <strong>40% production cost reduction</strong> while overseeing French, Korean, Indonesian, Arabic, Portuguese, Spanish and more — simultaneously. Outside of full-time roles, I build AI-driven content pipelines using Make.com, Claude API, and ElevenLabs.
+          Previously at <strong>Bored Panda</strong>, I drove <strong>40% production cost reduction</strong> through workflow automation and tool optimization — managing operations across 8 content pipelines simultaneously with <strong>100% on-time delivery</strong>. At <strong>Transcosmos Vietnam</strong>, I worked directly with CRM and data systems — building operational dashboards and managing data accuracy in a tech-integrated service environment. Outside of full-time roles, I architect and ship AI-driven automation pipelines using Make.com, Claude API, and ElevenLabs.
         </p>
       </div>
       <div class="about-tags">
         <span class="tag game">Game Publishing</span>
-        <span class="tag game">Localization Lead</span>
-        <span class="tag accent">Project Management</span>
-        <span class="tag accent">Media Production</span>
+        <span class="tag game">Cross-platform Delivery</span>
+        <span class="tag accent">IT Project Management</span>
+        <span class="tag accent">SDLC Coordination</span>
         <span class="tag teal">Business Analysis</span>
         <span class="tag teal">IIBA Certified</span>
         <span class="tag">Agile / Kanban</span>
         <span class="tag">AI Automation</span>
+        <span class="tag">Technical Documentation</span>
         <span class="tag">Vendor Management</span>
-        <span class="tag">9+ Languages</span>
       </div>
     </div>
   </div>
@@ -362,13 +373,13 @@
       </div>
       <div class="exp-content">
         <div class="exp-role">Project Management Executive</div>
-        <p class="exp-desc">Leading publishing PM across three concurrent mobile titles — coordinating cross-functional teams, structuring localization processes, and optimizing workflows from pre-launch through live operations.</p>
+        <p class="exp-desc">Managing the full software delivery lifecycle across three concurrent mobile and PC titles — coordinating with development teams, QA, and business stakeholders from sprint planning through platform submission, launch, and live ops.</p>
         <ul class="exp-achievements">
-          <li>Launched <a href="https://dream.vnggames.com/en/official" target="_blank" rel="noopener noreferrer" class="game-link">Dream and Lethe Record</a> (Strategic RPG, iOS/Android) – overseeing publishing lifecycle from planning through live ops and pre-launch events management</li>
-          <li>Leading localization project management for <a href="https://nghichthuyhan.vnggames.com/" target="_blank" rel="noopener noreferrer" class="game-link" lang="vi">Nghịch Thủy Hàn</a> (AAA Open World MMORPG, iOS/Android/PC) — coordinating localization workflows and structuring processes between developers, vendors, and internal teams</li>
-          <li>Serving as PM and Localization Lead for an Otome Game title — optimizing vendor workflows, translation pipelines, and cross-functional delivery coordination</li>
-          <li>Coordinating and optimizing localization pipelines across <span class="highlight">Vietnamese, English, and Thai</span> language versions simultaneously across all active titles</li>
-          <li>Managing partner and vendor relationships; structuring repeatable processes for game content, marketing assets, and platform compliance</li>
+          <li>Shipped <a href="https://dream.vnggames.com/en/official" target="_blank" rel="noopener noreferrer" class="game-link">Dream and Lethe Record</a> (Strategic RPG, iOS/Android) — owning delivery milestones, coordinating build schedules with dev teams, and managing go-to-market execution through live operations</li>
+          <li>Leading cross-functional delivery for <a href="https://nghichthuyhan.vnggames.com/" target="_blank" rel="noopener noreferrer" class="game-link" lang="vi">Nghịch Thủy Hàn</a> (AAA MMORPG, iOS/Android/PC) — managing technical dependencies between developer, QA, and platform teams; coordinating platform certification requirements for multi-platform release</li>
+          <li>Serving as PM and Localization Lead for an Otome title — structuring delivery workflows, writing technical documentation for vendor integration, and managing cross-team handoffs</li>
+          <li>Coordinating <span class="highlight">platform submission and compliance processes</span> (iOS App Store / Google Play / PC) — tracking build approval cycles and resolving blockers with dev and QA teams</li>
+          <li>Maintaining delivery tracking across concurrent sprints; producing status reports, dependency maps, and risk registers for stakeholder visibility</li>
         </ul>
       </div>
     </div>
@@ -405,14 +416,17 @@
       <div class="exp-meta">
         <div class="exp-period">Mar 2021 – Sep 2023</div>
         <div class="exp-company">Transcosmos Vietnam</div>
-        <div class="exp-domain">Workforce Mgmt · CRM · Tourism</div>
+        <div class="exp-domain">Data Systems · CRM · BPO Tech Operations</div>
       </div>
       <div class="exp-content">
         <div class="exp-role">Data Analyst & Ticketing Specialist</div>
-        <p class="exp-desc">Dual-role supporting Traveloka operations — data visualization and air transport ticketing management.</p>
+        <p class="exp-desc">Dual-role supporting Traveloka's BPO operations — working directly with CRM systems, data platforms, and airline GDS tooling in a tech-integrated service environment.</p>
         <ul class="exp-achievements">
-          <li>Built dashboards and visual reports surfacing operational patterns for management decision-making</li>
-          <li>Managed air transport ticketing operations with focus on accuracy and customer satisfaction</li>
+          <li>Built operational dashboards and visual reports using data from CRM and ticketing systems — surfacing KPIs and workflow patterns for management decision-making</li>
+          <li>Worked with structured datasets across multiple internal systems — querying, validating, and transforming operational data into actionable reporting outputs</li>
+          <li>Wrote and maintained process documentation for ticketing workflows and system procedures — ensuring operational accuracy and onboarding consistency</li>
+          <li>Managed air transport ticketing via GDS platforms (Sabre/Amadeus ecosystem) — maintaining data accuracy standards across high-volume transaction queues</li>
+          <li>Coordinated with technical teams to resolve data discrepancies and system-level issues affecting service operations</li>
         </ul>
       </div>
     </div>
@@ -435,11 +449,44 @@
   </div>
 </section>
 
+<!-- AI PIPELINE -->
+<section id="ai-pipeline">
+  <div class="section-label">04 — AI Pipeline</div>
+  <h2 class="section-title">Building with AI,<br>outside the job description.</h2>
+  <p class="section-sub">Independently architecting and shipping automated content pipelines — hands-on technical execution that bridges the gap between PM and engineering.</p>
+  <div class="pipeline-grid">
+    <div class="pipeline-card">
+      <div class="pipeline-stack">Make.com → Claude API → ElevenLabs → YouTube</div>
+      <h3>Automated Video Production Pipeline</h3>
+      <p>End-to-end automation from content brief to published video — orchestrating AI script generation, voice synthesis, and platform distribution without manual intervention. Built, debugged, and iterated on multi-step API integrations independently.</p>
+      <div class="pipeline-tags">
+        <span class="pipeline-tag">Make.com</span>
+        <span class="pipeline-tag">Claude API</span>
+        <span class="pipeline-tag">ElevenLabs</span>
+        <span class="pipeline-tag">YouTube API</span>
+        <span class="pipeline-tag">Webhooks</span>
+      </div>
+    </div>
+    <div class="pipeline-card">
+      <div class="pipeline-stack">API Integration · Workflow Automation · Documentation</div>
+      <h3>Technical Context for IT PM</h3>
+      <p>Building and maintaining automation pipelines requires reading API documentation, configuring webhook-based integrations, writing structured specifications, and debugging multi-system workflows — the same technical literacy needed to coordinate effectively with engineering teams and evaluate technical feasibility.</p>
+      <div class="pipeline-tags">
+        <span class="pipeline-tag">REST APIs</span>
+        <span class="pipeline-tag">Webhooks</span>
+        <span class="pipeline-tag">JSON</span>
+        <span class="pipeline-tag">Process Documentation</span>
+        <span class="pipeline-tag">System Integration</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- SKILLS -->
 <section class="skills" id="skills">
-  <div class="section-label">04 — Skills</div>
+  <div class="section-label">05 — Skills</div>
   <h2 class="section-title">What I bring to the table.</h2>
-  <p class="section-sub">Game publishing expertise layered on top of hard PM methodology, localization operations experience, and practical AI tooling.</p>
+  <p class="section-sub">IT PM methodology and technical coordination skills layered on top of game publishing expertise, localization operations, and hands-on AI tooling.</p>
   <div class="skills-grid">
     <div class="skill-card">
       <div class="skill-icon">Project Management</div>
@@ -454,15 +501,27 @@
       </div>
     </div>
     <div class="skill-card">
+      <div class="skill-icon">IT & Technical PM</div>
+      <h3>Technical Delivery</h3>
+      <div class="skill-items">
+        <div class="skill-item">SDLC management & sprint facilitation</div>
+        <div class="skill-item">Technical documentation & specs</div>
+        <div class="skill-item">QA coordination & release sign-off</div>
+        <div class="skill-item">Platform certification (iOS / Android / PC)</div>
+        <div class="skill-item">API & integration awareness</div>
+        <div class="skill-item">Dependency tracking & risk registers</div>
+      </div>
+    </div>
+    <div class="skill-card">
       <div class="skill-icon">Game & Tools</div>
       <h3>Toolstack</h3>
       <div class="skill-items">
+        <div class="skill-item">Jira · Confluence · Monday.com · Lark</div>
+        <div class="skill-item">Make.com · Claude API · ChatGPT</div>
         <div class="skill-item">Mobile publishing (iOS / Android / PC)</div>
-        <div class="skill-item">Monday.com · Lark · Jira · Confluence</div>
         <div class="skill-item">Game localization (VI / EN / TH)</div>
-        <div class="skill-item">Make.com automation</div>
-        <div class="skill-item">Claude API · ChatGPT</div>
         <div class="skill-item">Xmind · Balsamiq · Visily</div>
+        <div class="skill-item">GDS platforms (Sabre / Amadeus)</div>
       </div>
     </div>
     <div class="skill-card">
@@ -470,11 +529,11 @@
       <h3>Domains</h3>
       <div class="skill-items">
         <div class="skill-item">Game publishing & go-to-market</div>
-        <div class="skill-item">Localization — 9+ languages</div>
-        <div class="skill-item">Media & video production ops</div>
+        <div class="skill-item">Software delivery & live ops</div>
         <div class="skill-item">Business analysis (IIBA certified)</div>
-        <div class="skill-item">AI-driven content pipelines</div>
-        <div class="skill-item">YouTube platform operations</div>
+        <div class="skill-item">Data operations & CRM systems</div>
+        <div class="skill-item">AI-driven automation pipelines</div>
+        <div class="skill-item">Localization — 9+ languages</div>
       </div>
     </div>
   </div>
@@ -482,7 +541,7 @@
 
 <!-- CREDENTIALS -->
 <section id="credentials">
-  <div class="section-label">05 — Credentials</div>
+  <div class="section-label">06 — Credentials</div>
   <h2 class="section-title">Qualifications & certifications.</h2>
 
   <div class="certs-grid">
@@ -551,9 +610,9 @@
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
-  <div class="section-label">06 — Contact</div>
+  <div class="section-label">07 — Contact</div>
   <h2 class="section-title" style="margin-bottom:16px">Let's build<br>something together.</h2>
-  <p class="section-sub">Open to PM roles in game publishing, development studios, and media/content operations. Also available for localization consulting and AI workflow projects.</p>
+  <p class="section-sub">Open to IT PM roles in game studios, software development teams, and tech-adjacent organizations. Also available for localization consulting and AI workflow projects.</p>
   <div class="contact-links">
     <a href="mailto:nha.tranminh19@gmail.com" class="contact-link primary">nha.tranminh19@gmail.com ↗</a>
     <a href="https://www.linkedin.com/in/nhaminhtran/" target="_blank" rel="noopener noreferrer" class="contact-link">LinkedIn</a>
